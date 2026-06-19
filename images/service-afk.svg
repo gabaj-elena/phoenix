@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-afk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7BDE2"/>
+      <stop offset="50%" stop-color="#B19CD9"/>
+      <stop offset="100%" stop-color="#7E5AAB"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-afk)"/>
+  <!-- Зал с ковром -->
+  <rect x="0" y="280" width="600" height="120" fill="#fff" opacity="0.2"/>
+  <!-- Силуэт занимающегося (растяжка) -->
+  <g transform="translate(300, 230)">
+    <circle cx="0" cy="-70" r="20" fill="#fff"/>
+    <path d="M-15 -50 Q0 -40 15 -50 L25 30 L-25 30 Z" fill="#fff"/>
+    <line x1="-15" y1="30" x2="-50" y2="20" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+    <line x1="15" y1="30" x2="50" y2="20" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <!-- Мяч -->
+  <circle cx="120" cy="340" r="15" fill="#FFC857"/>
+  <!-- Гантели -->
+  <rect x="450" y="320" width="40" height="8" fill="#FF8B6B" rx="2"/>
+  <rect x="445" y="310" width="12" height="28" fill="#FF8B6B" rx="2"/>
+  <rect x="483" y="310" width="12" height="28" fill="#FF8B6B" rx="2"/>
+  <rect x="450" y="350" width="40" height="8" fill="#7BD3B0" rx="2"/>
+  <rect x="445" y="340" width="12" height="28" fill="#7BD3B0" rx="2"/>
+  <rect x="483" y="340" width="12" height="28" fill="#7BD3B0" rx="2"/>
+  <!-- Сердечко -->
+  <path d="M180 80 C 175 73, 165 73, 165 85 C 165 95, 180 105, 180 105 C 180 105, 195 95, 195 85 C 195 73, 185 73, 180 80 Z" fill="#FF8B6B" opacity="0.7"/>
+  <path d="M450 60 C 445 53, 435 53, 435 65 C 435 75, 450 85, 450 85 C 450 85, 465 75, 465 65 C 465 53, 455 53, 450 60 Z" fill="#7BD3B0" opacity="0.7"/>
+</svg>

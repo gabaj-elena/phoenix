@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Стилизованная птица Феникс в оранжево-фиолетовых тонах -->
+  <defs>
+    <linearGradient id="phoenixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8C42"/>
+      <stop offset="100%" stop-color="#9B7EBD"/>
+    </linearGradient>
+    <linearGradient id="phoenixGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFB07A"/>
+      <stop offset="100%" stop-color="#B19CD9"/>
+    </linearGradient>
+  </defs>
+  <!-- Тело птицы -->
+  <path d="M32 8 C 28 18, 24 22, 18 24 C 22 28, 26 30, 28 32 C 22 30, 16 30, 10 32 C 18 36, 24 40, 28 44 C 24 48, 18 52, 14 56 C 22 54, 30 50, 32 44 C 34 50, 42 54, 50 56 C 46 52, 40 48, 36 44 C 40 40, 46 36, 54 32 C 48 30, 42 30, 36 32 C 38 30, 42 28, 46 24 C 40 22, 36 18, 32 8 Z"
+        fill="url(#phoenixGrad)"/>
+  <!-- Крыло сверху -->
+  <path d="M32 14 C 28 18, 24 20, 20 20 C 24 24, 28 24, 32 22 C 36 24, 40 24, 44 20 C 40 20, 36 18, 32 14 Z"
+        fill="url(#phoenixGrad2)" opacity="0.9"/>
+  <!-- Голова/глаз -->
+  <circle cx="32" cy="20" r="1.5" fill="#FFF8E7"/>
+</svg>

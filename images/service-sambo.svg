@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-sambo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC857"/>
+      <stop offset="50%" stop-color="#FF8B6B"/>
+      <stop offset="100%" stop-color="#E8553A"/>
+    </linearGradient>
+    <radialGradient id="light-s" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-sambo)"/>
+  <rect width="600" height="400" fill="url(#light-s)"/>
+  <!-- Ковёр/татами -->
+  <ellipse cx="300" cy="280" rx="220" ry="40" fill="#fff" opacity="0.3"/>
+  <!-- Борцы -->
+  <g transform="translate(200, 200)">
+    <circle cx="0" cy="-40" r="25" fill="#fff"/>
+    <path d="M-30 -10 Q0 -25 30 -10 L35 60 L-35 60 Z" fill="#fff"/>
+    <rect x="-15" y="60" width="12" height="40" fill="#fff" rx="2"/>
+    <rect x="3" y="60" width="12" height="40" fill="#fff" rx="2"/>
+  </g>
+  <g transform="translate(400, 200)">
+    <circle cx="0" cy="-40" r="25" fill="#2A2A3E"/>
+    <path d="M-30 -10 Q0 -25 30 -10 L35 60 L-35 60 Z" fill="#2A2A3E"/>
+    <rect x="-15" y="60" width="12" height="40" fill="#2A2A3E" rx="2"/>
+    <rect x="3" y="60" width="12" height="40" fill="#2A2A3E" rx="2"/>
+  </g>
+  <!-- Пояс/схватка -->
+  <path d="M260 200 Q300 180 340 200" stroke="#FFC857" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="300" cy="190" r="6" fill="#FFC857"/>
+</svg>

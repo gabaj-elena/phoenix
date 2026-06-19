@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <linearGradient id="av-natalia" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7BD3B0"/>
+      <stop offset="50%" stop-color="#A8E6CF"/>
+      <stop offset="100%" stop-color="#5A7EBF"/>
+    </linearGradient>
+  </defs>
+  <circle cx="150" cy="150" r="150" fill="url(#av-natalia)"/>
+  <circle cx="150" cy="120" r="55" fill="#fff" opacity="0.95"/>
+  <path d="M40 300 C 40 220, 80 190, 150 190 C 220 190, 260 220, 260 300 Z" fill="#fff" opacity="0.95"/>
+  <text x="150" y="135" font-family="Georgia,serif" font-size="48" fill="#3FB28F" text-anchor="middle" font-weight="800">НГ</text>
+</svg>
