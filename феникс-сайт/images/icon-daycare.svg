@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9F5A"/>
+      <stop offset="100%" stop-color="#B19CD9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#g1)" opacity="0.15"/>
+  <!-- Домик/группа -->
+  <path d="M16 30 L32 16 L48 30 L48 48 L16 48 Z" stroke="url(#g1)" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+  <circle cx="24" cy="38" r="2" fill="url(#g1)"/>
+  <circle cx="32" cy="38" r="2" fill="url(#g1)"/>
+  <circle cx="40" cy="38" r="2" fill="url(#g1)"/>
+  <path d="M28 44 Q32 40 36 44" stroke="url(#g1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8C42"/>
+      <stop offset="100%" stop-color="#9B7EBD"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#g3)" opacity="0.15"/>
+  <!-- Гантель/спорт -->
+  <rect x="14" y="28" width="6" height="8" rx="1.5" stroke="url(#g3)" stroke-width="2.5" fill="none"/>
+  <rect x="44" y="28" width="6" height="8" rx="1.5" stroke="url(#g3)" stroke-width="2.5" fill="none"/>
+  <rect x="20" y="30" width="24" height="4" rx="1" fill="url(#g3)"/>
+  <path d="M32 18 L 32 24 M 28 21 L 32 18 L 36 21" stroke="url(#g3)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

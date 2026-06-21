@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-trainers" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5DCEC"/>
+      <stop offset="50%" stop-color="#9CB8E0"/>
+      <stop offset="100%" stop-color="#5A7EBF"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-trainers)"/>
+  <!-- Тренажёр-вертикализатор -->
+  <g transform="translate(300, 200)">
+    <!-- Рама -->
+    <rect x="-80" y="-100" width="160" height="200" rx="10" fill="#fff" opacity="0.95" stroke="#5A7EBF" stroke-width="3"/>
+    <!-- Стойки -->
+    <rect x="-80" y="-100" width="8" height="200" fill="#5A7EBF"/>
+    <rect x="72" y="-100" width="8" height="200" fill="#5A7EBF"/>
+    <!-- Опоры для ног -->
+    <rect x="-50" y="40" width="100" height="15" fill="#7BD3B0" rx="3"/>
+    <rect x="-50" y="65" width="100" height="15" fill="#7BD3B0" rx="3"/>
+    <!-- Стол/поддержка -->
+    <rect x="-60" y="-30" width="120" height="15" fill="#FFC857" rx="3"/>
+    <rect x="-50" y="0" width="100" height="20" fill="#FF8B6B" rx="3"/>
+    <!-- Колесо регулировки -->
+    <circle cx="80" cy="0" r="12" fill="#fff" stroke="#5A7EBF" stroke-width="3"/>
+    <line x1="80" y1="-8" x2="80" y2="8" stroke="#5A7EBF" stroke-width="2"/>
+    <line x1="72" y1="0" x2="88" y2="0" stroke="#5A7EBF" stroke-width="2"/>
+  </g>
+  <!-- Звёздочки -->
+  <circle cx="100" cy="80" r="4" fill="#FFC857" opacity="0.8"/>
+  <circle cx="500" cy="100" r="5" fill="#FFC857" opacity="0.8"/>
+  <circle cx="120" cy="320" r="4" fill="#FF8B6B" opacity="0.8"/>
+  <circle cx="480" cy="340" r="5" fill="#FF8B6B" opacity="0.8"/>
+</svg>

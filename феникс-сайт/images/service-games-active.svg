@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-games" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A8E6CF"/>
+      <stop offset="50%" stop-color="#FFD6A5"/>
+      <stop offset="100%" stop-color="#FF8B6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-games)"/>
+  <!-- Контур поля -->
+  <ellipse cx="300" cy="220" rx="240" ry="100" fill="#fff" opacity="0.2"/>
+  <!-- Дети в движении -->
+  <g transform="translate(150, 250)">
+    <circle cx="0" cy="-30" r="18" fill="#FF8B6B"/>
+    <path d="M-15 -10 Q0 -15 15 -10 L20 30 L-20 30 Z" fill="#FF8B6B"/>
+    <line x1="-15" y1="0" x2="-30" y2="-15" stroke="#FF8B6B" stroke-width="6" stroke-linecap="round"/>
+    <line x1="15" y1="0" x2="30" y2="-15" stroke="#FF8B6B" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(300, 280)">
+    <circle cx="0" cy="-30" r="18" fill="#7BD3B0"/>
+    <path d="M-15 -10 Q0 -15 15 -10 L20 30 L-20 30 Z" fill="#7BD3B0"/>
+    <line x1="-15" y1="0" x2="-30" y2="15" stroke="#7BD3B0" stroke-width="6" stroke-linecap="round"/>
+    <line x1="15" y1="0" x2="30" y2="15" stroke="#7BD3B0" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(450, 250)">
+    <circle cx="0" cy="-30" r="18" fill="#B19CD9"/>
+    <path d="M-15 -10 Q0 -15 15 -10 L20 30 L-20 30 Z" fill="#B19CD9"/>
+    <line x1="-15" y1="0" x2="-30" y2="-15" stroke="#B19CD9" stroke-width="6" stroke-linecap="round"/>
+    <line x1="15" y1="0" x2="30" y2="15" stroke="#B19CD9" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- Мяч -->
+  <circle cx="200" cy="180" r="18" fill="#fff" stroke="#5A7EBF" stroke-width="2"/>
+  <path d="M200 162 Q190 175 200 180 Q210 175 200 162 M200 180 L182 195 M200 180 L218 195" stroke="#5A7EBF" stroke-width="2" fill="none"/>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-board" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD6E0"/>
+      <stop offset="50%" stop-color="#C5DCEC"/>
+      <stop offset="100%" stop-color="#B19CD9"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-board)"/>
+  <!-- Настольная игра: шахматная доска -->
+  <g transform="translate(300, 200)">
+    <rect x="-130" y="-130" width="260" height="260" rx="8" fill="#8B4513" stroke="#5A2A0E" stroke-width="6"/>
+    <g id="chess">
+      <rect x="-120" y="-120" width="40" height="40" fill="#FFE5A0"/>
+      <rect x="-80" y="-120" width="40" height="40" fill="#5A2A0E"/>
+      <rect x="-40" y="-120" width="40" height="40" fill="#FFE5A0"/>
+      <rect x="0" y="-120" width="40" height="40" fill="#5A2A0E"/>
+      <rect x="40" y="-120" width="40" height="40" fill="#FFE5A0"/>
+      <rect x="80" y="-120" width="40" height="40" fill="#5A2A0E"/>
+      <rect x="-120" y="-80" width="40" height="40" fill="#5A2A0E"/>
+      <rect x="-80" y="-80" width="40" height="40" fill="#FFE5A0"/>
+      <rect x="-40" y="-80" width="40" height="40" fill="#5A2A0E"/>
+      <rect x="0" y="-80" width="40" height="40" fill="#FFE5A0"/>
+      <rect x="40" y="-80" width="40" height="40" fill="#5A2A0E"/>
+      <rect x="80" y="-80" width="40" height="40" fill="#FFE5A0"/>
+    </g>
+  </g>
+  <!-- Фигуры -->
+  <g transform="translate(220, 130)">
+    <circle cx="0" cy="0" r="14" fill="#fff" stroke="#2A2A3E" stroke-width="2"/>
+    <rect x="-8" y="10" width="16" height="6" fill="#fff" stroke="#2A2A3E" stroke-width="2"/>
+  </g>
+  <g transform="translate(380, 270)">
+    <circle cx="0" cy="0" r="14" fill="#2A2A3E"/>
+    <rect x="-8" y="10" width="16" height="6" fill="#2A2A3E"/>
+  </g>
+  <!-- Кубик -->
+  <g transform="translate(110, 320)">
+    <rect x="-25" y="-25" width="50" height="50" rx="8" fill="#fff" stroke="#2A2A3E" stroke-width="2" transform="rotate(-15)"/>
+    <circle cx="-10" cy="-10" r="3" fill="#2A2A3E" transform="rotate(-15)"/>
+    <circle cx="10" cy="10" r="3" fill="#2A2A3E" transform="rotate(-15)"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-master" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE5A0"/>
+      <stop offset="50%" stop-color="#FFC857"/>
+      <stop offset="100%" stop-color="#E89A1F"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-master)"/>
+  <!-- Палитра/стол -->
+  <ellipse cx="300" cy="380" rx="280" ry="30" fill="#fff" opacity="0.3"/>
+  <!-- Краски -->
+  <circle cx="180" cy="260" r="25" fill="#FF8B6B"/>
+  <circle cx="220" cy="280" r="22" fill="#7BD3B0"/>
+  <circle cx="260" cy="265" r="24" fill="#B19CD9"/>
+  <circle cx="305" cy="280" r="26" fill="#FFC857"/>
+  <circle cx="350" cy="262" r="23" fill="#5A7EBF"/>
+  <circle cx="390" cy="278" r="25" fill="#FF6B9D"/>
+  <!-- Кисть -->
+  <g transform="translate(440, 180) rotate(20)">
+    <rect x="-8" y="0" width="16" height="100" fill="#8B4513" rx="3"/>
+    <rect x="-15" y="100" width="30" height="20" fill="#666" rx="2"/>
+    <path d="M-12 120 L0 145 L12 120 Z" fill="#FF8B6B"/>
+  </g>
+  <!-- Холст -->
+  <rect x="80" y="80" width="180" height="130" fill="#fff" rx="8" transform="rotate(-5 170 145)"/>
+  <text x="170" y="155" font-family="Arial" font-size="40" fill="#FF8B6B" text-anchor="middle" font-weight="900" transform="rotate(-5 170 145)">ART</text>
+</svg>
