@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-knitting" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD6E0"/>
+      <stop offset="50%" stop-color="#FFB5C5"/>
+      <stop offset="100%" stop-color="#D7BDE2"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-knitting)"/>
+  <!-- Клубок -->
+  <g transform="translate(180, 220)">
+    <circle cx="0" cy="0" r="70" fill="#FF8B6B"/>
+    <circle cx="0" cy="0" r="60" fill="#FF6B5B" opacity="0.7"/>
+    <path d="M-50 -20 Q-30 -40 0 -30 Q30 -45 50 -25" stroke="#fff" stroke-width="3" fill="none" opacity="0.7"/>
+    <path d="M-50 20 Q-30 0 0 10 Q30 -5 50 15" stroke="#fff" stroke-width="3" fill="none" opacity="0.7"/>
+    <path d="M-40 -50 Q-20 -30 -10 -10" stroke="#fff" stroke-width="3" fill="none" opacity="0.7"/>
+    <path d="M40 50 Q20 30 10 10" stroke="#fff" stroke-width="3" fill="none" opacity="0.7"/>
+  </g>
+  <!-- Спицы -->
+  <g transform="translate(420, 200) rotate(15)">
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+    <line x1="40" y1="0" x2="40" y2="120" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+    <!-- Вязание -->
+    <path d="M0 30 Q10 35 20 30 Q30 35 40 30 L40 50 L0 50 Z" fill="#7BD3B0"/>
+    <path d="M0 50 Q10 55 20 50 Q30 55 40 50 L40 70 L0 70 Z" fill="#FFC857"/>
+    <path d="M0 70 Q10 75 20 70 Q30 75 40 70 L40 90 L0 90 Z" fill="#B19CD9"/>
+    <path d="M0 90 Q10 95 20 90 Q30 95 40 90 L40 110 L0 110 Z" fill="#FF8B6B"/>
+  </g>
+  <!-- Чайная чашка -->
+  <g transform="translate(120, 340)">
+    <ellipse cx="0" cy="0" rx="30" ry="8" fill="#fff"/>
+    <path d="M-25 0 L-22 30 Q-15 38 0 38 Q15 38 22 30 L25 0" fill="#fff"/>
+    <ellipse cx="0" cy="0" rx="20" ry="5" fill="#8B4513"/>
+    <path d="M25 5 Q35 10 32 20 Q28 25 25 22" stroke="#fff" stroke-width="3" fill="none"/>
+  </g>
+</svg>

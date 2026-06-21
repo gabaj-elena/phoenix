@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-daycare" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD6A5"/>
+      <stop offset="50%" stop-color="#FFB5C5"/>
+      <stop offset="100%" stop-color="#FF8B6B"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="80%" cy="20%" r="30%">
+      <stop offset="0%" stop-color="#FFE5A0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFE5A0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-daycare)"/>
+  <rect width="600" height="400" fill="url(#sun)"/>
+  <!-- Облака -->
+  <ellipse cx="100" cy="80" rx="50" ry="18" fill="#fff" opacity="0.6"/>
+  <ellipse cx="450" cy="60" rx="60" ry="22" fill="#fff" opacity="0.5"/>
+  <!-- Домик/группа -->
+  <g transform="translate(300, 220)">
+    <path d="M-90 -30 L0 -90 L90 -30 L90 60 L-90 60 Z" fill="#fff" opacity="0.95"/>
+    <path d="M-90 -30 L0 -90 L90 -30" fill="none" stroke="#FF8B6B" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="-25" y="0" width="50" height="60" fill="#FF8B6B" rx="4"/>
+    <circle cx="-45" cy="0" r="10" fill="#FFC857"/>
+    <circle cx="45" cy="0" r="10" fill="#7BD3B0"/>
+    <rect x="-50" y="20" width="20" height="20" fill="#7BD3B0" rx="2"/>
+    <rect x="30" y="20" width="20" height="20" fill="#FFC857" rx="2"/>
+  </g>
+  <!-- Силуэты детей -->
+  <circle cx="180" cy="280" r="18" fill="#7BD3B0"/>
+  <path d="M165 320 Q180 295 195 320 L195 360 L165 360 Z" fill="#7BD3B0"/>
+  <circle cx="420" cy="280" r="18" fill="#B19CD9"/>
+  <path d="M405 320 Q420 295 435 320 L435 360 L405 360 Z" fill="#B19CD9"/>
+  <circle cx="240" cy="320" r="14" fill="#FFC857"/>
+  <path d="M228 350 Q240 330 252 350 L252 380 L228 380 Z" fill="#FFC857"/>
+  <circle cx="360" cy="320" r="14" fill="#FF8B6B"/>
+  <path d="M348 350 Q360 330 372 350 L372 380 L348 380 Z" fill="#FF8B6B"/>
+</svg>

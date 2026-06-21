@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9F5A"/>
+      <stop offset="100%" stop-color="#9B7EBD"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#g4)" opacity="0.15"/>
+  <!-- Сердце с пульсом -->
+  <path d="M32 46 C 18 36, 16 28, 22 24 C 26 22, 30 24, 32 28 C 34 24, 38 22, 42 24 C 48 28, 46 36, 32 46 Z" stroke="url(#g4)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+  <path d="M22 32 L 26 32 L 28 28 L 30 36 L 32 32 L 36 32" stroke="url(#g4)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

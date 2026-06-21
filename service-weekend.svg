@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg-weekend" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC857"/>
+      <stop offset="50%" stop-color="#FF8B6B"/>
+      <stop offset="100%" stop-color="#B19CD9"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-weekend)"/>
+  <!-- Солнце -->
+  <circle cx="500" cy="100" r="50" fill="#FFE5A0" opacity="0.9"/>
+  <circle cx="500" cy="100" r="35" fill="#FFD66B"/>
+  <!-- Облака -->
+  <ellipse cx="120" cy="80" rx="55" ry="20" fill="#fff" opacity="0.7"/>
+  <ellipse cx="280" cy="60" rx="40" ry="15" fill="#fff" opacity="0.6"/>
+  <!-- Календарь -->
+  <g transform="translate(300, 230)">
+    <rect x="-90" y="-80" width="180" height="160" rx="12" fill="#fff"/>
+    <rect x="-90" y="-80" width="180" height="40" rx="12" fill="#FF6B6B"/>
+    <rect x="-90" y="-50" width="180" height="10" fill="#FF6B6B"/>
+    <line x1="-30" y1="-100" x2="-30" y2="-60" stroke="#2A2A3E" stroke-width="6" stroke-linecap="round"/>
+    <line x1="30" y1="-100" x2="30" y2="-60" stroke="#2A2A3E" stroke-width="6" stroke-linecap="round"/>
+    <!-- Сетка -->
+    <g fill="none" stroke="#E0E0E0" stroke-width="1">
+      <line x1="-60" y1="0" x2="60" y2="0"/>
+      <line x1="-60" y1="30" x2="60" y2="30"/>
+      <line x1="-60" y1="60" x2="60" y2="60"/>
+      <line x1="-30" y1="-20" x2="-30" y2="70"/>
+      <line x1="0" y1="-20" x2="0" y2="70"/>
+      <line x1="30" y1="-20" x2="30" y2="70"/>
+    </g>
+    <!-- Выделенная суббота -->
+    <circle cx="0" cy="0" r="18" fill="#FFC857" stroke="#E89A1F" stroke-width="3"/>
+    <text x="0" y="8" font-family="Arial" font-size="20" fill="#2A2A3E" text-anchor="middle" font-weight="900">СБ</text>
+  </g>
+  <!-- Звёздочки вокруг -->
+  <text x="80" y="200" font-family="Arial" font-size="30" fill="#fff" opacity="0.6">✦</text>
+  <text x="500" y="300" font-family="Arial" font-size="40" fill="#fff" opacity="0.6">✦</text>
+  <text x="450" y="180" font-family="Arial" font-size="24" fill="#fff" opacity="0.6">★</text>
+</svg>
