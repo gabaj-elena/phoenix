@@ -452,7 +452,7 @@ ul {
 /* Hero visual */
 .hero__visual {
     position: relative;
-    height: 480px;
+    height: 620px;
 }
 
 .hero__phoenix {
@@ -460,8 +460,8 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 240px;
-    height: 240px;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--peach) 0%, var(--yellow-soft) 50%, var(--pink) 100%);
     display: flex;
@@ -494,38 +494,57 @@ ul {
     box-shadow: var(--shadow-md);
     font-weight: 600;
     font-size: 14px;
-    color: var(--violet-ink);
+    color: #fff;
     animation: float 5s ease-in-out infinite;
+    border: 2px solid #fff;
 }
 
 .hero__card img {
     width: 36px;
     height: 36px;
     flex-shrink: 0;
+    /* Делаем иконку белой — она будет видна на цветной плашке */
+    filter: brightness(0) invert(1);
 }
 
+/* Каждая плашка — свой цвет, как лепестки вокруг логотипа */
 .hero__card--1 {
+    background: var(--coral-ink);   /* Дневное пребывание — тёплый коралловый */
     top: 30px;
     left: 0;
     animation-delay: 0s;
 }
 
 .hero__card--2 {
-    top: 100px;
-    right: 0;
+    background: var(--mint-ink);    /* Бочча — мятный зелёный */
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1;
     animation-delay: 1s;
 }
 
 .hero__card--3 {
-    bottom: 50px;
-    left: 30px;
+    background: var(--sky);         /* Тренажёры — голубой */
+    bottom: 30px;
+    left: 0;
     animation-delay: 2s;
 }
 
 .hero__card--4 {
-    top: 220px;
-    left: 0;
+    background: var(--lavender-ink); /* АФК — лавандовый */
+    bottom: 30px;
+    right: 0;
     animation-delay: 2.5s;
+}
+
+.hero__card--5 {
+    background: var(--yellow-ink);  /* Адаптивное самбо — янтарный */
+    color: #fff;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 1.5s;
 }
 
 /* =============================================
@@ -1346,10 +1365,13 @@ ul {
 
 .footer__qr-frame img {
     width: 100%;
-    max-width: 130px;
+    max-width: 180px;
     height: auto;
     aspect-ratio: 1 / 1;
     display: block;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .footer__qr-label {
@@ -1702,9 +1724,19 @@ ul {
 
     .hero { padding: 40px 0 60px; }
     .section { padding: 60px 0; }
-    .hero__visual { height: 320px; }
-    .hero__phoenix { width: 160px; height: 160px; }
-    .hero__phoenix img { width: 90px; height: 90px; }
+    .hero__visual { height: 420px; }
+    .hero__phoenix { width: 200px; height: 200px; }
+    .hero__phoenix img { width: 118px; height: 118px; }
+
+    /* На телефонах плашки в 4 угла вокруг большого логотипа;
+       5-ю прячем, чтобы не налезала на логотип */
+    .hero__card { font-size: 13px; padding: 10px 14px; }
+    .hero__card img { width: 30px; height: 30px; }
+    .hero__card--1 { top: 10px; left: 10px; }
+    .hero__card--2 { top: 10px; right: 10px; }
+    .hero__card--3 { bottom: 10px; right: 10px; }
+    .hero__card--4 { bottom: 10px; left: 10px; }
+    .hero__card--5 { display: none; }
 
     .services__grid, .team__grid { grid-template-columns: 1fr; }
     .about__visual { grid-template-columns: 1fr 1fr; }
@@ -1722,6 +1754,46 @@ ul {
     .hero__card { font-size: 12px; padding: 10px 12px; }
     .hero__card img { width: 28px; height: 28px; }
     .about__visual { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+    /* На самых узких экранах все плашки становятся лентой под логотипом */
+    .hero__visual {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 0 6px 6px;
+    }
+    .hero__phoenix {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 130px;
+        height: 130px;
+        margin: 6px auto 0;
+    }
+    .hero__phoenix img { width: 80px; height: 80px; }
+    /* Плашки — горизонтальная лента */
+    .hero__card {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: auto;
+    }
+    .hero__visual > .hero__card {
+        display: none;
+    }
+    /* Лента-плашки отдельным блоком через псевдоэлемент не сделать —
+       используем обычное поведение: показываем только 2 самых важных */
+    .hero__card--1, .hero__card--2 {
+        display: flex;
+    }
 }
 
 /* =============================================
@@ -2282,11 +2354,92 @@ ul {
     font-weight: 700;
 }
 
+/* =============================================
+   РЕКВИЗИТЫ ДЛЯ ПОЖЕРТВОВАНИЯ
+   ============================================= */
+.donate-requisites {
+    border: 2px solid var(--orange-soft);
+    background: linear-gradient(135deg, #FFF8EE 0%, #FFFFFF 60%);
+    scroll-margin-top: 100px;
+}
+
+.donate-requisites .donate-block__num {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--yellow) 100%);
+    color: #fff;
+}
+
+.requisites {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: #fff;
+    border-radius: var(--r-md);
+    padding: 8px 24px;
+    border: 1px solid var(--violet-soft);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 20px;
+}
+
+.requisites__row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--violet-soft);
+    align-items: baseline;
+}
+
+.requisites__row:last-child {
+    border-bottom: none;
+}
+
+.requisites__label {
+    font-weight: 700;
+    color: var(--violet-ink);
+    font-size: 14px;
+}
+
+.requisites__value {
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 500;
+    font-family: 'Manrope', monospace;
+    word-break: break-word;
+}
+
+.requisites__note {
+    background: var(--yellow-soft);
+    border-left: 3px solid var(--yellow-ink);
+    padding: 14px 18px;
+    border-radius: var(--r-sm);
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+}
+
+.requisites__note code {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    color: var(--orange-ink);
+    border: 1px solid rgba(232, 154, 31, 0.25);
+}
+
 @media (max-width: 720px) {
     .donate-block { padding: 28px 22px; }
     .donate-block__head { flex-direction: column; align-items: flex-start; gap: 12px; }
     .donate-block__title { font-size: 20px; }
     .friend-card { flex-direction: column; padding: 22px; gap: 16px; }
+    .requisites { padding: 4px 18px; }
+    .requisites__row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 12px 0;
+    }
+    .requisites__label { font-size: 13px; }
+    .requisites__value { font-size: 15px; }
     .donate-block__contacts { flex-direction: column; }
     .contact-pill { justify-content: center; }
 }
@@ -2584,4 +2737,121 @@ ul {
     .donate-amounts { grid-template-columns: 1fr 1fr; }
     .donate-amounts .donate-amount--custom { grid-column: span 2; }
     .donate-payments { grid-template-columns: 1fr; }
+}
+
+/* =============================================
+   КОМПАКТНЫЙ БЛОК РЕКВИЗИТОВ В СЕКЦИИ "ПОДДЕРЖАТЬ"
+   ============================================= */
+.donate-requisites-compact {
+    border: 2px solid var(--orange-soft);
+    background: linear-gradient(135deg, #FFF8EE 0%, #FFFFFF 60%);
+    text-align: center;
+}
+
+.donate-requisites-compact .donate-block__head {
+    justify-content: center;
+    text-align: center;
+}
+
+.donate-requisites-compact .donate-block__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.donate-requisites-compact .donate-block__lead {
+    max-width: 600px;
+    margin-bottom: 0;
+}
+
+.donate-requisites-compact .btn--primary {
+    margin: 4px 0;
+}
+
+.requisites__hint {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 520px;
+    margin: 0;
+}
+
+/* =============================================
+   МОДАЛЬНОЕ ОКНО С РЕКВИЗИТАМИ
+   ============================================= */
+.modal__dialog--requisites {
+    max-width: 620px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal__icon--requisites {
+    background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--orange-soft) 100%);
+    color: var(--orange-ink);
+}
+
+.requisites-requisites {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: #fff;
+    border-radius: var(--r-md);
+    padding: 6px 20px;
+    border: 1px solid var(--violet-soft);
+    box-shadow: var(--shadow-sm);
+    margin: 18px 0;
+}
+
+.requisites-requisites__row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--violet-soft);
+    align-items: baseline;
+}
+
+.requisites-requisites__row:last-child {
+    border-bottom: none;
+}
+
+.requisites-requisites__label {
+    font-weight: 700;
+    color: var(--violet-ink);
+    font-size: 13px;
+}
+
+.requisites-requisites__value {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.requisites-note-requisites {
+    background: var(--yellow-soft);
+    border-left: 3px solid var(--yellow-ink);
+    padding: 12px 16px;
+    border-radius: var(--r-sm);
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 8px 0 0;
+}
+
+@media (max-width: 720px) {
+    .donate-requisites-compact .donate-block__head {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .requisites-requisites { padding: 4px 14px; }
+    .requisites-requisites__row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        padding: 10px 0;
+    }
+    .requisites-requisites__label { font-size: 12px; }
+    .requisites-requisites__value { font-size: 14px; }
 }

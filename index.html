@@ -78,8 +78,8 @@
             </div>
             <div class="hero__visual" aria-hidden="true">
                 <div class="hero__card hero__card--1">
-                    <img src="images/icon-sport.svg" alt="">
-                    <span>Адаптивное самбо</span>
+                    <img src="images/icon-daycare.svg" alt="">
+                    <span>Дневное пребывание</span>
                 </div>
                 <div class="hero__card hero__card--2">
                     <img src="images/icon-sport.svg" alt="">
@@ -92,6 +92,10 @@
                 <div class="hero__card hero__card--4">
                     <img src="images/icon-sport.svg" alt="">
                     <span>АФК</span>
+                </div>
+                <div class="hero__card hero__card--5">
+                    <img src="images/icon-sport.svg" alt="">
+                    <span>Адаптивное самбо</span>
                 </div>
                 <div class="hero__phoenix">
                     <img src="images/logo-real.png" alt="">
@@ -456,6 +460,26 @@
                 </div>
             </div>
 
+            <!-- Блок 1.5: Кнопка для открытия реквизитов в модалке -->
+            <div class="donate-block donate-requisites-compact">
+                <div class="donate-block__head">
+                    <span class="donate-block__num">★</span>
+                    <h3 class="donate-block__title">Реквизиты для пожертвования</h3>
+                </div>
+                <div class="donate-block__content">
+                    <p class="donate-block__lead">
+                        Чтобы сделать пожертвование, переведите любую сумму по реквизитам организации.
+                        Назначение платежа — <strong>«Благотворительность»</strong>.
+                    </p>
+                    <button type="button" class="btn btn--primary btn--lg" data-requisites-open>
+                        Открыть реквизиты
+                    </button>
+                    <p class="requisites__hint">
+                        💛 Или наведите камеру телефона на QR-код внизу страницы — банковское приложение откроет платёж автоматически.
+                    </p>
+                </div>
+            </div>
+
             <!-- Блок 2: Помочь на что-то конкретное -->
             <div class="donate-block donate-block--alt">
                 <div class="donate-block__head">
@@ -570,9 +594,9 @@
                                 </div>
                                 <span class="footer__qr-label">Мы в ВКонтакте</span>
                             </a>
-                            <a href="https://yoomoney.ru/to/4100118000231686" target="_blank" rel="noopener" class="footer__qr-card footer__qr-card--donate">
+                            <a href="#" class="footer__qr-card footer__qr-card--donate" data-requisites-open title="Реквизиты для пожертвования — откроются на этой странице">
                                 <div class="footer__qr-frame">
-                                    <img src="images/qr-donate-real.jpg" alt="QR-код для пожертвования Фениксу" loading="lazy">
+                                    <img src="images/qr-donate-real.jpg" alt="QR-код для пожертвования Фениксу — откроет реквизиты для оплаты" loading="lazy">
                                 </div>
                                 <span class="footer__qr-label">Поддержать Феникс</span>
                             </a>
@@ -817,6 +841,70 @@
                 <h3>Спасибо за вашу помощь!</h3>
                 <p>Ваше пожертвование очень важно для «Феникса» и наших подопечных. Отчёт о поступлениях мы публикуем в нашей группе ВКонтакте.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- ====== МОДАЛЬНОЕ ОКНО С РЕКВИЗИТАМИ ====== -->
+    <div class="modal" id="requisitesModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="requisitesTitle">
+        <div class="modal__overlay" data-requisites-close></div>
+        <div class="modal__dialog modal__dialog--requisites" role="document">
+            <button class="modal__close" data-requisites-close aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <path d="M6 6l12 12M18 6L6 18"/>
+                </svg>
+            </button>
+            <div class="modal__icon modal__icon--requisites">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 18l20-10 20 10v28l-20 10-20-10V18z"/>
+                    <path d="M12 18l20 10 20-10"/>
+                    <path d="M32 28v20"/>
+                </svg>
+            </div>
+            <h2 class="modal__title" id="requisitesTitle">Реквизиты для пожертвования</h2>
+            <p class="modal__subtitle">Переведите любую сумму по этим реквизитам.<br>Назначение платежа: <strong>«Благотворительность»</strong></p>
+
+            <div class="requisites-requisites">
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">Получатель</span>
+                    <span class="requisites-requisites__value">АНО СОДЕЙСТВИЯ РЕАБИЛИТАЦИИ И СОЦИАЛЬНОЙ АДАПТАЦИИ ЛЮДЕЙ С ОГРАНИЧ. ВОЗМОЖН. «ЦЕНТР ВОЗМОЖНОСТЕЙ «ФЕНИКС»</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">ИНН</span>
+                    <span class="requisites-requisites__value">0272927024</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">КПП</span>
+                    <span class="requisites-requisites__value">027201001</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">Расчётный счёт</span>
+                    <span class="requisites-requisites__value">40703810417450000001</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">Банк</span>
+                    <span class="requisites-requisites__value">Альфа Банк</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">БИК</span>
+                    <span class="requisites-requisites__value">044525593</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">Корр. счёт</span>
+                    <span class="requisites-requisites__value">30101810200000000593</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">Валюта</span>
+                    <span class="requisites-requisites__value">RUR (Российский рубль)</span>
+                </div>
+                <div class="requisites-requisites__row">
+                    <span class="requisites-requisites__label">Назначение платежа</span>
+                    <span class="requisites-requisites__value">Благотворительность</span>
+                </div>
+            </div>
+
+            <p class="requisites-note-requisites">
+                💛 Наведите камеру телефона на <strong>QR-код внизу страницы</strong> — банковское приложение откроет платёж автоматически.
+            </p>
         </div>
     </div>
 </body>

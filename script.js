@@ -5,6 +5,12 @@
 (() => {
     'use strict';
 
+    // Сервис FormSubmit.co — пересылает данные с формы письмом на ваш email.
+    // Никакого сервера не нужно: сайт шлёт POST, FormSubmit пересылает вам письмо.
+    // Чтобы активировать — один раз откройте ссылку-подтверждение из письма,
+    // которое FormSubmit пришлёт на gabaj-elena@yandex.ru после первой заявки.
+    const FORM_SUBMIT_URL = 'https://formsubmit.co/ajax/gabaj-elena@yandex.ru';
+
     // ---------- Год в подвале ----------
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -134,6 +140,35 @@
         el.addEventListener('click', closeDonate);
     });
 
+    // ---------- Модальное окно с реквизитами для пожертвования ----------
+    const requisitesModal = document.getElementById('requisitesModal');
+
+    const openRequisites = (e) => {
+        if (e) e.preventDefault();
+        if (!requisitesModal) return;
+        lastFocused = document.activeElement;
+
+        requisitesModal.classList.add('is-open');
+        requisitesModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeRequisites = () => {
+        if (!requisitesModal) return;
+        requisitesModal.classList.remove('is-open');
+        requisitesModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+    };
+
+    document.querySelectorAll('[data-requisites-open]').forEach(btn => {
+        btn.addEventListener('click', openRequisites);
+    });
+
+    document.querySelectorAll('[data-requisites-close]').forEach(el => {
+        el.addEventListener('click', closeRequisites);
+    });
+
     // Переключение "Своя сумма" — показать поле ввода
     if (donateForm && customAmountWrap) {
         donateForm.querySelectorAll('input[name="amount"]').forEach(radio => {
@@ -207,6 +242,7 @@
         if (e.key !== 'Escape') return;
         if (modal && modal.classList.contains('is-open')) closeModal();
         if (donateModal && donateModal.classList.contains('is-open')) closeDonate();
+        if (requisitesModal && requisitesModal.classList.contains('is-open')) closeRequisites();
     });
 
     // ---------- Маска телефона ----------
@@ -277,23 +313,61 @@
 
             if (!valid) return;
 
-            // Имитация отправки
+            // Реальная отправка заявки на почту через FormSubmit.co
             const submitBtn = formEl.querySelector('.form__submit');
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Отправляем...';
             }
 
-            setTimeout(() => {
-                formEl.hidden = true;
-                if (successEl) successEl.hidden = false;
+            // FormSubmit принимает данные как form-urlencoded или JSON
+            // Используем URLSearchParams — это надёжнее для FormSubmit
+            const formData = new URLSearchParams();
+            formData.append('Имя посетителя', name);
+            formData.append('Телефон', phone);
+            formData.append('Услуга', service);
+            formData.append('Удобное время', time);
+            formData.append('Источник', 'Сайт АНО «Феникс» — gabaj-elena.github.io/phoenix/');
+            // Заголовок письма
+            formData.append('_subject', `Новая заявка с сайта: ${service || 'без услуги'}`);
+            // Куда присылать ответ (необязательно)
+            formData.append('_replyto', 'noreply@phoenix-site.local');
+            // Шаблон письма
+            formData.append('_template', 'table');
+            // После первой заявки FormSubmit пришлёт письмо с просьбой подтвердить адрес —
+            // просто нажмите ссылку в нём, и дальше всё будет приходить автоматически.
+            formData.append('_captcha', 'false');
+
+            fetch(FORM_SUBMIT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            })
+            .then(r => r.json().catch(() => ({})))
+            .then(result => {
+                // FormSubmit возвращает { success: true, ... } при успехе
+                const ok = result && (result.success === true || result.success === 'true' || result.message);
+                if (ok) {
+                    console.log('[Phoenix] Заявка отправлена на почту:', { name, phone, service, time });
+                    formEl.hidden = true;
+                    if (successEl) successEl.hidden = false;
+                } else {
+                    console.warn('[Phoenix] FormSubmit вернул неожиданный ответ:', result);
+                    alert('Не удалось отправить заявку. Попробуйте позже или напишите нам на phoenix_ano@mail.ru.');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Отправить заявку';
+                    }
+                }
+            })
+            .catch(err => {
+                console.error('[Phoenix] Ошибка сети при отправке заявки:', err);
+                alert('Не удалось отправить заявку. Проверьте интернет и попробуйте ещё раз.');
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Отправить заявку';
                 }
-
-                console.log('[Phoenix] Заявка отправлена:', { name, phone, service, time });
-            }, 800);
+            });
         });
 
         // Сброс ошибки при вводе
